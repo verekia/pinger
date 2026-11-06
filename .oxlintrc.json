@@ -1,0 +1,8 @@
+{
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "plugins": ["typescript", "import", "unicorn"],
+  "ignorePatterns": ["node_modules", "config.js"]
+}
