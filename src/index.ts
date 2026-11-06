@@ -66,9 +66,17 @@ const page = () => `<!doctype html>
 <title>Pinger</title>
 <style>
   :root { color-scheme: light dark; }
-  body { font: 16px/1.8 ui-monospace, monospace; margin: 2rem; }
+  body { font: 14px/1.5 system-ui, sans-serif; margin: 1.5rem; }
+  main { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.25rem 1rem; }
+  div { white-space: nowrap; }
+  @media (max-width: 600px) {
+    body { font-size: 11px; margin: 0.5rem; }
+    main { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.2rem 0.5rem; }
+  }
 </style>
+<main>
 ${targets.map(({ isUp, host }) => `<div>${isUp ? '🟢' : '🔴'} ${host}</div>`).join('\n')}
+</main>
 </html>
 `
 
